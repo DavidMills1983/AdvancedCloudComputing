@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv/config')
 
-mongoose.connect(MURL, () => {
-    console.log('DB is connected')
+mongoose.connect(process.env.DB_CONNECTOR).then(()=>{
+    console.log('Your MongoDB connector is ON')
 })
 
 app.listen(3000, () => {
